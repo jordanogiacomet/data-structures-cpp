@@ -6,13 +6,13 @@ using namespace std;
 struct Node
 {
     int data;
-    Node* next;
+    Node *next;
 };
 
-Node* front = NULL;
-Node* rear = NULL;
+Node *front = NULL;
+Node *rear = NULL;
 
-Node* GetNewNode(int value);
+Node *GetNewNode(int value);
 bool IsEmpty();
 void Enqueue(int value);
 void Dequeue();
@@ -32,9 +32,9 @@ int main(void)
     Dequeue();
 }
 
-Node* GetNewNode(int value)
+Node *GetNewNode(int value)
 {
-    Node* newNode = new Node();
+    Node *newNode = new Node();
     newNode->data = value;
     newNode->next = NULL;
 
@@ -43,7 +43,7 @@ Node* GetNewNode(int value)
 
 bool IsEmpty()
 {
-    if(front == NULL && rear == NULL)
+    if (front == NULL && rear == NULL)
     {
         return true;
     }
@@ -52,8 +52,8 @@ bool IsEmpty()
 
 void Enqueue(int value)
 {
-    Node* temp = GetNewNode(value);
-    if(IsEmpty())
+    Node *temp = GetNewNode(value);
+    if (IsEmpty())
     {
         front = rear = temp;
         return;
@@ -63,14 +63,14 @@ void Enqueue(int value)
 }
 
 void Dequeue()
-{   
-    Node* temp = front;
-    if(IsEmpty())
+{
+    Node *temp = front;
+    if (IsEmpty())
     {
         cout << "Queue is empty.\n";
         return;
     }
-    if(front == rear)
+    if (front == rear)
     {
         front = rear = NULL;
     }
@@ -83,7 +83,7 @@ void Dequeue()
 
 int Front()
 {
-    if(IsEmpty())
+    if (IsEmpty())
     {
         cout << "Queue is empty.\n";
     }
